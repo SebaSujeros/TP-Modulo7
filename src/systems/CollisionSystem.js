@@ -25,7 +25,7 @@ export class CollisionSystem
         if (GameState.isDefeated()) {
             GameState.running = false;
             this.player.freeze();
-            this.scene.time.delayedCall(500, () => this.scene.start('GameOver'));
+            this.scene.time.delayedCall(500, () => this.scene.scene.start('GameOver'));
         }
     }
 }
