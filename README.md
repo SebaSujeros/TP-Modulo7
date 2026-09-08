@@ -1,6 +1,6 @@
 # Rooftop Runner
 
-Mini arcade auto-runner desarrollado en **Phaser 4 + Vite** para el TP Módulo 7 de Desarrollo Tecnológico 2.
+Mini arcade auto-runner desarrollado en Phaser 4 + Vite para el TP Módulo 7 de Desarrollo Tecnológico 2.
 
 El jugador corre automáticamente por azoteas de la ciudad, esquiva obstáculos, junta monedas y trata de llegar a 150 puntos antes de perder sus 3 vidas. La velocidad de carrera aumenta con el tiempo.
 
@@ -32,15 +32,15 @@ npm run build-nolog  # igual pero sin telemetría de Phaser
 
 ## Controles
 
-- **ESPACIO** o **CLIC** → saltar (salto único; solo se puede volver a saltar al tocar el suelo).
+- ESPACIO o CLIC → saltar (salto único; solo se puede volver a saltar al tocar el suelo).
 
-## Reglas (según GDD)
+## Reglas
 
 - El mundo avanza solo hacia la izquierda; el jugador no se mueve en X.
-- Esquivar los obstáculos rojos: cada choque resta **1 vida**.
-- Juntar monedas: cada una suma **10 puntos**.
-- Victoria al alcanzar **150 puntos**.
-- Derrota al quedarse sin **vidas** (3 en total).
+- Esquivar los obstáculos rojos: cada choque resta 1 vida.
+- Juntar monedas: cada una suma 10 puntos.
+- Victoria al alcanzar 150 puntos.
+- Derrota al quedarse sin vidas (3 en total).
 - La velocidad de scroll aumenta de forma gradual con el tiempo, hasta un tope máximo.
 - Sin niveles, power-ups, guardado ni multijugador.
 
@@ -61,11 +61,10 @@ src/
   systems/           # AutoRunner, SpawnerSystem, CollisionSystem, DifficultySystem, InputSystem, Hud
   patterns/          # GameConfig (constantes), EventBus, GameState
 docs/
-  GDD.docx           # GDD (ruta original de la entrega)
-  GDD.txt            # copia de trabajo en texto (se puede borrar)
+  GDD.pdf           # GDD
 ```
 
 ## Referencias
 
-- GDD: `docs/GDD.docx`.
+- GDD: `docs/GDD.pdf`.
 - Guías oficiales de Phaser 4 incluidas en `node_modules/phaser/skills/`.
