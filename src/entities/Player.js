@@ -8,7 +8,7 @@ export class Player
         const x = GameConfig.player.x;
         const y = GameConfig.groundY - height / 2;
 
-        this.sprite = scene.add.rectangle(x, y, width, height, 0x33ccff);
+        this.sprite = scene.add.rectangle(x, y, width, height, GameConfig.colors.player);
         scene.physics.add.existing(this.sprite);
         this.body = this.sprite.body;
         this.body.setSize(width, height);

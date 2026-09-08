@@ -1,4 +1,5 @@
 import { EventBus } from '../patterns/EventBus.js';
+import { GameConfig } from '../patterns/GameConfig.js';
 import { GameState } from '../patterns/GameState.js';
 
 export class Hud
@@ -8,17 +9,17 @@ export class Hud
         this.scene = scene;
 
         this.scoreText = scene.add.text(24, 24, `Puntos: ${GameState.score}`, {
-            fontFamily: 'Arial Black',
+            fontFamily: GameConfig.ui.fontFamily,
             fontSize: 28,
-            color: '#ffffff',
+            color: toCss(GameConfig.colors.hudScore),
             stroke: '#000000',
             strokeThickness: 4
         });
 
         this.livesText = scene.add.text(24, 62, `Vidas: ${GameState.lives}`, {
-            fontFamily: 'Arial Black',
+            fontFamily: GameConfig.ui.fontFamily,
             fontSize: 28,
-            color: '#ff8888',
+            color: toCss(GameConfig.colors.hudLives),
             stroke: '#000000',
             strokeThickness: 4
         });
@@ -35,4 +36,9 @@ export class Hud
         EventBus.off('score', this._onScore);
         EventBus.off('lives', this._onLives);
     }
+}
+
+function toCss (value)
+{
+    return `#${value.toString(16).padStart(6, '0')}`;
 }

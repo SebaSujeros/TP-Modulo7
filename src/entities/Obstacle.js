@@ -8,7 +8,7 @@ export class Obstacle
         const x = GameConfig.worldWidth + obstacleWidth / 2;
         const y = GameConfig.groundY - obstacleHeight / 2;
 
-        this.sprite = scene.add.rectangle(x, y, obstacleWidth, obstacleHeight, 0xc0392b);
+        this.sprite = scene.add.rectangle(x, y, obstacleWidth, obstacleHeight, GameConfig.colors.obstacle);
         scene.physics.add.existing(this.sprite);
         this.body = this.sprite.body;
         this.body.setAllowGravity(false);

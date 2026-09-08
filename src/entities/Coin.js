@@ -9,7 +9,7 @@ export class Coin
         const y = GameConfig.spawner.coinMinY +
             Math.random() * (GameConfig.spawner.coinMaxY - GameConfig.spawner.coinMinY);
 
-        this.sprite = scene.add.circle(x, y, coinRadius, 0xffd700);
+        this.sprite = scene.add.circle(x, y, coinRadius, GameConfig.colors.coin);
         scene.physics.add.existing(this.sprite);
         this.body = this.sprite.body;
         this.body.setAllowGravity(false);

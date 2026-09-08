@@ -1,4 +1,5 @@
 import { Scene } from 'phaser';
+import { GameConfig } from '../patterns/GameConfig.js';
 import { GameState } from '../patterns/GameState.js';
 import { Player } from '../entities/Player.js';
 import { AutoRunner } from '../systems/AutoRunner.js';
@@ -17,7 +18,7 @@ export class GameScene extends Scene
 
     create ()
     {
-        this.cameras.main.setBackgroundColor(0x7ec8e3);
+        this.cameras.main.setBackgroundColor(GameConfig.colors.sky);
 
         GameState.reset();
         GameState.running = true;

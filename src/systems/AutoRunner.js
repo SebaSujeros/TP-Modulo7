@@ -16,14 +16,14 @@ export class AutoRunner
     createGround ()
     {
         const { worldWidth, groundY } = GameConfig;
-        this.ground = this.scene.add.rectangle(worldWidth / 2, groundY + 8, worldWidth, 16, 0x3d5a42);
+        this.ground = this.scene.add.rectangle(worldWidth / 2, groundY + 8, worldWidth, 16, GameConfig.colors.ground);
         this.scene.physics.add.existing(this.ground, true);
     }
 
     createSkyline ()
     {
         const { worldWidth, groundY } = GameConfig;
-        const colors = [0x243b4d, 0x1e3242, 0x33506b, 0x2a3f52, 0x24404f];
+        const colors = GameConfig.colors.skyline;
         let x = -80;
         let colorIndex = 0;
         while (x < worldWidth + 80) {
@@ -40,7 +40,7 @@ export class AutoRunner
     createRoofDecorations ()
     {
         const { worldWidth, groundY } = GameConfig;
-        const colors = [0x7d93a3, 0x93a8b4, 0x6e8494];
+        const colors = GameConfig.colors.roofDecor;
         let x = -80;
         let colorIndex = 0;
         while (x < worldWidth + 80) {
@@ -48,7 +48,7 @@ export class AutoRunner
             const height = 30 + Math.floor(Math.random() * 50);
             const rect = this.scene.add.rectangle(x, groundY, width, height, colors[colorIndex % colors.length]);
             rect.setOrigin(0.5, 1);
-            rect.setAlpha(0.35);
+            rect.setAlpha(GameConfig.ui.roofDecorAlpha);
             this.nearLayer.push(rect);
             x += width + 170;
             colorIndex++;

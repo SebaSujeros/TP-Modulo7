@@ -10,7 +10,7 @@ const config = {
     width: GameConfig.worldWidth,
     height: GameConfig.worldHeight,
     parent: 'game-container',
-    backgroundColor: '#028af8',
+    backgroundColor: `#${GameConfig.colors.boot.toString(16).padStart(6, '0')}`,
     physics: {
         default: 'arcade',
         arcade: {
