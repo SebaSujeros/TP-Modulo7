@@ -22,7 +22,7 @@ Instrucciones para trabajar en este repositorio (juego "Rooftop Runner", TP Mód
 - `src/entities/` — `Player`, `Obstacle`, `Coin` (cada uno envuelve su Game Object y su body).
 - `src/systems/` — responsabilidades únicas: `AutoRunner` (scroll y parallax, posee el suelo), `SpawnerSystem`, `CollisionSystem`, `DifficultySystem`, `InputSystem`, `Hud`.
 - `src/patterns/` — `GameConfig` (todas las constantes/colores), `EventBus` (pub/sub singleton), `GameState` (score/vidas/running).
-- `docs/GDD.txt` — GDD en texto (reglas de juego).
+- `docs/GDD.docx` — GDD de la entrega (reglas de juego).
 
 ## Convenciones importantes
 

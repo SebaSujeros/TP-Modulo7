@@ -61,11 +61,11 @@ src/
   systems/           # AutoRunner, SpawnerSystem, CollisionSystem, DifficultySystem, InputSystem, Hud
   patterns/          # GameConfig (constantes), EventBus, GameState
 docs/
-  GDD.txt            # GDD en texto
-  GDD.pdf            # GDD entregado (colocarlo acá para la entrega)
+  GDD.docx           # GDD (ruta original de la entrega)
+  GDD.txt            # copia de trabajo en texto (se puede borrar)
 ```
 
 ## Referencias
 
-- GDD: `docs/GDD.txt`.
+- GDD: `docs/GDD.docx`.
 - Guías oficiales de Phaser 4 incluidas en `node_modules/phaser/skills/`.
