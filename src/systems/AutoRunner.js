@@ -15,8 +15,15 @@ export class AutoRunner
 
     createGround ()
     {
-        const { worldWidth, groundY } = GameConfig;
-        this.ground = this.scene.add.rectangle(worldWidth / 2, groundY + 8, worldWidth, 16, GameConfig.colors.ground);
+        const { worldWidth, worldHeight, groundY } = GameConfig;
+        const height = worldHeight - groundY;
+        this.ground = this.scene.add.rectangle(
+            worldWidth / 2,
+            groundY + height / 2,
+            worldWidth,
+            height,
+            GameConfig.colors.ground
+        );
         this.scene.physics.add.existing(this.ground, true);
     }
 
