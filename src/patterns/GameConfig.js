@@ -38,7 +38,7 @@ export const GameConfig = {
         boot: 0x028af8,
         sky: 0x7ec8e3,
         ground: 0x3d5a42,
-        player: 0x33ccff,
+        player: 0x00e05a,
         obstacle: 0xc0392b,
         coin: 0xffd700,
         gameOver: 0x3a0a0a,
