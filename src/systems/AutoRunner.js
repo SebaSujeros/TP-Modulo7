@@ -40,16 +40,17 @@ export class AutoRunner
     createRoofDecorations ()
     {
         const { worldWidth, groundY } = GameConfig;
-        const colors = [0x8799a8, 0x9fb4c0, 0x75838f];
+        const colors = [0x7d93a3, 0x93a8b4, 0x6e8494];
         let x = -80;
         let colorIndex = 0;
         while (x < worldWidth + 80) {
-            const width = 22 + Math.floor(Math.random() * 34);
-            const height = 26 + Math.floor(Math.random() * 46);
+            const width = 26 + Math.floor(Math.random() * 40);
+            const height = 30 + Math.floor(Math.random() * 50);
             const rect = this.scene.add.rectangle(x, groundY, width, height, colors[colorIndex % colors.length]);
             rect.setOrigin(0.5, 1);
+            rect.setAlpha(0.35);
             this.nearLayer.push(rect);
-            x += width + 150;
+            x += width + 170;
             colorIndex++;
         }
     }
