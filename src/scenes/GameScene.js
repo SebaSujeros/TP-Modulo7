@@ -2,6 +2,8 @@ import { Scene } from 'phaser';
 import { GameState } from '../patterns/GameState.js';
 import { Player } from '../entities/Player.js';
 import { AutoRunner } from '../systems/AutoRunner.js';
+import { SpawnerSystem } from '../systems/SpawnerSystem.js';
+import { CollisionSystem } from '../systems/CollisionSystem.js';
 import { InputSystem } from '../systems/InputSystem.js';
 import { Hud } from '../systems/Hud.js';
 
@@ -21,10 +23,12 @@ export class GameScene extends Scene
 
         this.autoRunner = new AutoRunner(this);
         this.player = new Player(this);
+        this.spawner = new SpawnerSystem(this);
         this.hud = new Hud(this);
 
         this.physics.add.collider(this.player.sprite, this.autoRunner.ground);
 
+        this.collisionSystem = new CollisionSystem(this, this.player, this.spawner);
         this.inputSystem = new InputSystem(this, () => this.player.jump());
 
         this.events.once('shutdown', () => {
@@ -36,5 +40,6 @@ export class GameScene extends Scene
     {
         this.autoRunner.update(delta);
         this.player.update();
+        this.spawner.update(delta, this.autoRunner.getSpeed());
     }
 }

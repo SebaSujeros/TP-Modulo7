@@ -25,4 +25,10 @@ export class Player
     {
         this.isGrounded = this.body.blocked.down;
     }
+
+    freeze ()
+    {
+        this.body.setAllowGravity(false);
+        this.body.setVelocity(0);
+    }
 }
