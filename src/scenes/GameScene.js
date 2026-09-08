@@ -4,6 +4,7 @@ import { Player } from '../entities/Player.js';
 import { AutoRunner } from '../systems/AutoRunner.js';
 import { SpawnerSystem } from '../systems/SpawnerSystem.js';
 import { CollisionSystem } from '../systems/CollisionSystem.js';
+import { DifficultySystem } from '../systems/DifficultySystem.js';
 import { InputSystem } from '../systems/InputSystem.js';
 import { Hud } from '../systems/Hud.js';
 
@@ -22,6 +23,7 @@ export class GameScene extends Scene
         GameState.running = true;
 
         this.autoRunner = new AutoRunner(this);
+        this.difficulty = new DifficultySystem();
         this.player = new Player(this);
         this.spawner = new SpawnerSystem(this);
         this.hud = new Hud(this);
@@ -39,6 +41,7 @@ export class GameScene extends Scene
     update (_time, delta)
     {
         this.autoRunner.update(delta);
+        this.difficulty.update(delta, this.autoRunner);
         this.player.update();
         this.spawner.update(delta, this.autoRunner.getSpeed());
     }

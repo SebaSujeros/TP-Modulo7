@@ -1,3 +1,4 @@
+import { GameConfig } from '../patterns/GameConfig.js';
 import { GameState } from '../patterns/GameState.js';
 
 export class CollisionSystem
@@ -15,6 +16,14 @@ export class CollisionSystem
             null,
             this
         );
+
+        this.scene.physics.add.overlap(
+            this.player.sprite,
+            this.spawner.coinSprites,
+            this.onCoinHit,
+            null,
+            this
+        );
     }
 
     onObstacleHit (_playerSprite, obstacleSprite)
@@ -23,9 +32,25 @@ export class CollisionSystem
         GameState.loseLife();
 
         if (GameState.isDefeated()) {
-            GameState.running = false;
-            this.player.freeze();
-            this.scene.time.delayedCall(500, () => this.scene.scene.start('GameOver'));
+            this.endGame(false);
         }
+    }
+
+    onCoinHit (_playerSprite, coinSprite)
+    {
+        this.spawner.removeCoin(coinSprite);
+        GameState.addScore(GameConfig.coinValue);
+
+        if (GameState.hasWon()) {
+            this.endGame(true);
+        }
+    }
+
+    endGame (won)
+    {
+        if (!GameState.running) return;
+        GameState.running = false;
+        this.player.freeze();
+        this.scene.time.delayedCall(500, () => this.scene.scene.start('GameOver', { won }));
     }
 }

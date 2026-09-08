@@ -24,6 +24,7 @@ export const GameConfig = {
         maxDelayMs: 1500,
         obstacleWidth: 46,
         obstacleHeight: 64,
+        coinChance: 0.35,
         coinRadius: 16,
         coinMinY: 540,
         coinMaxY: 640
