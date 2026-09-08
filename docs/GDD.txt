@@ -1,0 +1,16 @@
+GDD — Rooftop Runner
+Desarrollo Tecnológico 2 · TP Módulo #7 — Mini-juego arcade de salto y timing
+Concepto
+Un personaje corre automáticamente de izquierda a derecha sobre techos. El jugador debe saltar en el momento justo para esquivar obstáculos y recolectar monedas en el aire.
+Controles
+Espacio (o click) para saltar. Espacio para reiniciar tras ganar o perder.
+Reglas
+• 3 vidas. Chocar contra un obstáculo resta 1 vida.
+• Cada moneda recolectada suma 10 puntos.
+• Victoria al llegar a 150 puntos. Derrota al llegar a 0 vidas.
+• La velocidad de scroll aumenta un poco con el tiempo.
+• Se puede reiniciar la partida desde la pantalla de fin.
+Pantallas
+Menú Juego Fin (Victoria/Derrota) Reinicio.
+Fuera de alcance
+Sin niveles múltiples, power-ups, guardado de puntajes ni multijugador.
